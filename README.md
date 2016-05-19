@@ -4,7 +4,7 @@
 [![DevDependencies][devdeps]][devdeps-url]
 [![Standard Code Style][style]][style-url]
 
-# PostHTML Use
+# PostHTML Use <img align="right" width="200" height="200" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
 
 ## Install
 
@@ -22,17 +22,18 @@ $ npm i -D posthtml-use
 
 ## Usage
 
-Add all plugins with @-rule syntax at the top of the file. Options can be set
-within the use plugin or loaded from package.json.
+Add all plugins with **@-rule** syntax at the top of the file.
+Options set within the use plugin or loaded directly from **package.json** or
+any **file.(js]json)**.
 
 ```js
 
 @use posthtml-bem
+// add another...
 
+<!DOCTYPE html>
 ```
 ## Options
-
-Options can be set within the use plugin or loaded from package.json.
 
 ```js
 
@@ -67,7 +68,7 @@ posthtml([ use('./path/to/[file].(js|json)') ])
 
 ```
 
-**file.(js | json)**
+**file.(js|json)**
 
 ```js
 
