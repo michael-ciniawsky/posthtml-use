@@ -1,6 +1,6 @@
 {
   "name": "posthtml-use",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use Plugin for PostHTML",
   "main": "index.js",
   "engines": {
