@@ -4,7 +4,9 @@
 [![DevDependencies][devdeps]][devdeps-url]
 [![Standard Code Style][style]][style-url]
 
-# PostHTML Use <img align="right" width="200" height="200" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
+<img align="right" width="200" height="200" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
+
+# PostHTML Use
 
 ## Install
 
@@ -24,7 +26,8 @@ $ npm i -D posthtml-use
 
 Add all plugins with **@-rule** syntax at the top of the file.
 Options set within the use plugin or loaded directly from **package.json** or
-any **file.(js]json)**.
+any **file.(js|json)**. Option keys named **without** the posthtml-prefix and
+hyphenated names **must** use quotes.
 
 ```js
 
@@ -36,21 +39,15 @@ any **file.(js]json)**.
 ## Options
 
 ```js
-
-posthtml([ use({bem: }) ])
-
+posthtml([ use({bem: {elemPrefix: '__', modPrefix: '--', modDlmtr: '-'}) ])
 ```
 
 ```js
-
 posthtml([ use('./package.json') ])
-
 ```
 
 ```js
-
 posthtml([ use('./path/to/[file].(js|json)') ])
-
 ```
 
 **package.json**
@@ -65,13 +62,11 @@ posthtml([ use('./path/to/[file].(js|json)') ])
     }
   }
 }
-
 ```
 
 **file.(js|json)**
 
 ```js
-
 module.exports = {
   bem: {
     elemPrefix: '__',
@@ -79,7 +74,6 @@ module.exports = {
     modDlmtr: '-'
   }
 }
-
 ```
 
 ```json
@@ -90,7 +84,6 @@ module.exports = {
     "modDlmtr": "-"
   }
 }
-
 ```
 
 ## Example
@@ -116,7 +109,6 @@ module.exports = {
 ```
 
 ```html
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -130,11 +122,9 @@ module.exports = {
     </div>
   </body>
 </html>
-
 ```
 
-
-## LICENSE [![License MIT][license]][license-url]
+## LICENSE [![MIT][license]][license-url]
 
 > MIT License (MIT)
 
