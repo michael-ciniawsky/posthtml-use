@@ -7,10 +7,7 @@
 const { readFileSync, writeFile } = require('fs')
 
 function read (path) {
-  return readFileSync(path, 'utf8', (err, data) => {
-    if (err) throw err
-    return data
-  })
+  return readFileSync(path, 'utf8')
 }
 
 function write (path, file) {
@@ -24,9 +21,10 @@ const posthtml = require('posthtml')
 
 const plugin = require('./index')
 
-posthtml([ plugin('./test/fixtures/package.json') ])
+posthtml([ plugin('./package.json') ])
   .process(read('./test/fixtures/index.html'))
   .then((result) => {
-    console.log(result.tree, result.html)
+    console.log(result.tree)
+    console.log(result.html)
     write('./test/results/index.html', result.html)
   })
