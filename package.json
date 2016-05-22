@@ -1,6 +1,6 @@
 {
   "name": "posthtml-use",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Use Plugin for PostHTML",
   "main": "index.js",
   "engines": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "pretest": "echo '=> Linting' && standard",
-    "test": "echo '=> Testing' && nyc ava 'test.js'",
+    "test": "echo '=> Testing' && nyc ava '*.test.js'",
     "posttest": "echo '=> Cleaning' && rm -rf .nyc_output coverage",
     "start": "echo '=> Starting' && node exec.js"
   },
@@ -19,26 +19,17 @@
   "nyc": {
     "all": true,
     "require": "babel-register",
-    "include": [
-      "lib",
-      "test"
-    ],
-    "extension": [
-      ".js"
-    ]
+    "include": ["lib", "test"],
+    "extension": [".js"]
   },
   "standard": {
     "ignore": []
   },
   "babel": {
     "env": {
-      "development": {
-        "sourceMaps": "inline"
-      }
+      "development": {"sourceMaps": "inline"}
     },
-    "presets": [
-      "es2015"
-    ]
+    "presets": ["es2015"]
   },
   "posthtml": {
     "bem": {
@@ -72,11 +63,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/michael-ciniawsky/posthtml-use"
+    "url": "https://github.com/posthtml-plugins/posthtml-use"
   },
   "bugs": {
-    "url": "https://github.com/michael-ciniawsky/posthtml-use/issues"
+    "url": "https://github.com/posthtml-plugins/posthtml-use/issues"
   },
-  "homepage": "https://github.com/michael-ciniawsky/posthtml-use#readme",
+  "homepage": "https://github.com/posthtml-plugins/posthtml-use#readme",
   "license": "MIT"
 }

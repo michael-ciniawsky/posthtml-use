@@ -30,15 +30,17 @@ exports = module.exports = function (options) {
 
     tree.shift()
 
-    let settings
-
     plugins = plugins
-      .filter((plugin) => plugin !== '' ? plugin : '')
+      .filter((plugin) => {
+        if (plugin.includes('@use')) {
+          return plugin
+        }
+      })
       .map((plugin) => {
         if (options[plugin.replace('@use ', '').split('-')[1]]) {
-          settings = options[plugin.replace('@use ', '').split('-')[1]]
+          options = options[plugin.replace('@use ', '').split('-')[1]]
 
-          return require(plugin.replace('@use ', '').split('(')[0])(settings)
+          return require(plugin.replace('@use ', '').split('(')[0])(options)
         }
 
         return require(plugin.replace('@use ', ''))()
