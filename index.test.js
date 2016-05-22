@@ -8,13 +8,10 @@ const test = require('ava')
 
 const plugin = require('./')
 
-const { readFile } = require('fs')
+const { readFileSync } = require('fs')
 
 const read = (path) => {
-  readFile(path, 'utf8', (err, file) => {
-    if (err) throw err
-    return file
-  })
+  readFileSync(path, 'utf8')
 }
 
 test('test if result matches expected output with defaults', (t) => {
